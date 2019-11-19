@@ -40,6 +40,10 @@ export const Owner = styled.header`
     text-align: center;
     max-width: 400px;
   }
+
+  select {
+    margin-top: 15px;
+  }
 `;
 
 export const IssueList = styled.ul`
@@ -98,6 +102,40 @@ export const IssueList = styled.ul`
         font-size: 12px;
         color: #999;
       }
+    }
+  }
+`;
+
+export const NextButton = styled.div.attrs(props => ({
+  disabled: props.firstpage
+}))`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  button {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    background: #7159c1;
+    margin: 15px 10px auto;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: none;
+
+    &:enabled:hover {
+      cursor: pointer;
+      background: #7179c1;
+    }
+
+    &:enabled:active {
+      cursor: pointer;
+      background: #7299c1;
+    }
+
+    &[disabled] {
+      cursor: not-allowed;
+      opacity: 0.6;
     }
   }
 `;
